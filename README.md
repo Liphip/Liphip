@@ -92,15 +92,15 @@ ___
 ## 📊 Stats
 
 <p align="center">
-  <a href="https://github.com/DenverCoder1/github-readme-streak-stats">
+  <a href="https://github.com/Liphip/">
     <img title="Streak Stats" alt="Liphip Streak Stats" src="https://github-readme-streak-stats.herokuapp.com/?user=Liphip&theme=dark"/>
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/anuraghazra/github-readme-stats">
+  <a href="https://github.com/Liphip/">
     <img title="GitHub Stats" alt="Liphip GitHub Stats" align="left" src="https://github-readme-stats.vercel.app/api?username=Liphip&show_icons=true&theme=dark&count_private=true&icon_color=0075ff&include_all_commits=true&custom_title=Liphip%27s+GitHub+Stats" height="192px" width="400px"/>
   </a>
-  <a href="https://github.com/anuraghazra/github-readme-stats">
+  <a href="https://wakatime.com/@Liphip">
     <img title="Wakatime Stats" alt="Liphip Wakatime Stats" align="right" src="https://github-readme-stats.vercel.app/api/wakatime?username=Liphip&theme=dark&layout=compact&langs_count=10" height="200px" width="400px"/>
   </a>
 </p>
