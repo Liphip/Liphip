@@ -2,7 +2,7 @@
 
 <img align="right" src="https://github.com/Liphip/Liphip/blob/master/assets/thumbnail.png" alt="Logo" width="256" height="256" />
 I'm Philip aka Liphip. I'm a Computer Science Student from Germany.
-I mainly work on many different private projects but always look for open-source projects to participate in.
+I mainly work on many different private projects but am always looking for open-source projects to contribute to.
 
 How to reach me **contact.liphip@gmail.com**
 ___
