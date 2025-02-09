@@ -24,7 +24,7 @@ Hello! I'm Philip Laskowicz, a Computer Science student, Project Engineer, and S
 ## Contact
 Feel free to reach out to me via [email](mailto:contact.liphip@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/plaskowicz/).
 
-- **Website:** [liphip.de](https://liphip.de)
+- **Website:** [laskowicz.de](https://laskowicz.de)
 - **Email:** [contact.liphip@gmail.com](mailto:contact.liphip@gmail.com)
 - **LinkedIn:** [Philip Laskowicz](https://www.linkedin.com/in/plaskowicz/)
 - **GitHub:** [Liphip](https://github.com/Liphip)
