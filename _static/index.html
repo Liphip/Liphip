@@ -9,13 +9,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Cloudflare Web Analytics -->
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "7d5ba7bbfbf442d9b1a3ae95da88e0cf"}'
+      data-cf-beacon='{"token": "7d5ba7bbf442d9b1a3ae95da88e0cf"}'
     ></script>
-    <!-- End Cloudflare Web Analytics -->
+    <meta name="description" content="Philip Laskowicz's personal webpage. Computer Science Student, Project Engineer IoT/IT, and Software Developer.">
+    <meta name="keywords" content="Philip Laskowicz, Liphip, Computer Science, IoT, IT, Software Developer, Projects, Education, Experiences, Papers">
+    <meta name="author" content="Philip Laskowicz">
+    <meta property="og:title" content="Philip Laskowicz - Personal Webpage">
+    <meta property="og:description" content="Computer Science Student, Project Engineer IoT/IT, and Software Developer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.laskowicz.de">
+    <meta property="og:image" content="https://www.laskowicz.de/thumbnail.png">
   </head>
   <body>
     <header>
@@ -26,58 +32,77 @@
     </header>
 
     <nav>
-      <ul>
-        <li>
-          <a href="#home"><i class="fas fa-home"></i> Home</a>
-        </li>
-        <li>
-          <a href="#education"
-            ><i class="fas fa-graduation-cap"></i> Education</a
-          >
-        </li>
-        <li>
-          <a href="#experiences"
-            ><i class="fas fa-briefcase"></i> Experiences</a
-          >
-        </li>
-        <li>
-          <a href="#papers"
-            ><i class="fas fa-file-alt"></i> Co-authored Papers</a
-          >
-        </li>
-        <li>
-          <a href="#projects"
-            ><i class="fas fa-project-diagram"></i> Own Projects and
-            contributions</a
-          >
-        </li>
-        <!--<li><a href="#interesting"><i class="fas fa-lightbulb"></i> Interesting Things</a></li>-->
-        <li>
-          <a href="#contact"><i class="fas fa-envelope"></i> Contact me</a>
-        </li>
-        <li>
-          <a href="#impressum"><i class="fas fa-info-circle"></i> Impressum</a>
-        </li>
-      </ul>
-      <div class="toggle-container">
-        <label class="toggle-label" for="themeToggle">
-          <span class="toggle-text">Theme:</span>
-          <select id="themeToggle" class="toggle-input">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="system">System Default</option>
-          </select>
-        </label>
+      <div class="nav dropdown">
+        <button class="nav dropdown-toggle">Menu</button>
+        <ul class="dropdown-content">
+          <li>
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="#education"
+              ><i class="fas fa-graduation-cap"></i> Education</a
+            >
+          </li>
+          <li>
+            <a href="#experiences"
+              ><i class="fas fa-briefcase"></i> Experiences</a
+            >
+          </li>
+          <li>
+            <a href="#papers"
+              ><i class="fas fa-file-alt"></i> Co-authored Papers</a
+            >
+          </li>
+          <li>
+            <a href="#projects"
+              ><i class="fas fa-project-diagram"></i> Own Projects and
+              contributions</a
+            >
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact me</a>
+          </li>
+          <li>
+            <a href="#impressum"
+              ><i class="fas fa-info-circle"></i> Impressum</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="theme dropdown">
+        <button class="theme dropdown-toggle">Theme</button>
+        <ul class="dropdown-content">
+          <li>
+            <a id="lightThemeBtn" class="theme-toggle" onclick="applyTheme('light')"
+              ><i class="fas fa-sun"></i> Light</a
+            >
+          </li>
+          <li>
+            <a id="darkThemeBtn" class="theme-toggle" onclick="applyTheme('dark')"
+              ><i class="fas fa-moon"></i> Dark</a
+            >
+          </li>
+          <li>
+            <a id="systemThemeBtn" class="theme-toggle" onclick="applyTheme('system')"
+              ><i class="fas fa-adjust"></i> System Default</a
+            >
+          </li>
+        </ul>
       </div>
     </nav>
 
     <main>
       <!-- Content will be loaded here dynamically -->
+      <code>
+        If you see this text, the content could not be loaded. Please try
+        refreshing the page.
+      </code>
     </main>
 
     <footer>
       <p>
-        &copy; 2021 Philip Laskowicz. All rights reserved.
+        &copy; 2025 Philip Laskowicz. All rights reserved.
         &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="#contact"><i class="fas fa-envelope"></i> Contact me</a>
         &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
