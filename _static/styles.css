@@ -110,6 +110,15 @@ nav {
   height: 2rem;
 }
 
+button.lang {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
