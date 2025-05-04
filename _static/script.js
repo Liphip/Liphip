@@ -91,8 +91,8 @@ document.addEventListener("click", function (event) {
 
 // Language change functionality
 function changeLanguage(language) {
-    href = "index.html";
-    currentLanguage = "en";
+    let href = "index.html";
+    let currentLanguage = "en";
     try {
         currentHref = window.location.href;
         currentLanguage =
