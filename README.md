@@ -1,7 +1,7 @@
 # Philip Laskowicz (Liphip)
 
 ## About Me
-Hello! I'm Philip Laskowicz, a Computer Science student, Project Engineer, and Software Developer. Welcome to my personal webpage where you can learn more about my education, experiences, and projects.
+Hello! I'm Philip Laskowicz, a Computer Science student, Project Engineer (Working Student), and Software Developer. Welcome to my personal webpage where you can learn more about my education, experiences, and projects.
 
 ## Projects
 ### Expense Tracker
