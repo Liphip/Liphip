@@ -57,12 +57,16 @@ function sanitizeFragmentDocument(doc) {
             }
             if (
                 (name === "href" || name === "src" || name === "xlink:href") &&
-                /^javascript:/i.test(value)
+                /^(javascript:|data:)/i.test(value)
             ) {
                 element.removeAttribute(attribute.name);
             }
         });
     });
+}
+
+function isGermanLanguage() {
+    return document.documentElement.lang.startsWith("de");
 }
 
 // Load content fragment from allowed local files and sanitize scriptable content
@@ -168,7 +172,7 @@ function changeLanguage(language) {
 }
 
 function bindShareControls() {
-    const isGermanPage = document.documentElement.lang.startsWith("de");
+    const isGermanPage = isGermanLanguage();
     const defaultMessages = isGermanPage
         ? {
             success: "Kopiert",
