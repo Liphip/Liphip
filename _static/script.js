@@ -49,16 +49,19 @@ function sanitizeFragmentDocument(doc) {
             return;
         }
 
-        for (let index = element.attributes.length - 1; index >= 0; index--) {
-            const attribute = element.attributes[index];
+        for (let attrIndex = element.attributes.length - 1; attrIndex >= 0; attrIndex--) {
+            const attribute = element.attributes[attrIndex];
             const name = attribute.name.toLowerCase();
             const value = attribute.value.trim();
+            const isScriptScheme = /^javascript:/i.test(value);
+            const isUnsafeDataUri = /^data:/i.test(value)
+                && !/^data:image\/(?:png|jpe?g|gif|webp|bmp|ico);base64,/i.test(value);
             if (name.startsWith("on")) {
                 element.removeAttribute(attribute.name);
             }
             if (
                 (name === "href" || name === "src" || name === "xlink:href") &&
-                /^(javascript:|data:)/i.test(value)
+                (isScriptScheme || isUnsafeDataUri)
             ) {
                 element.removeAttribute(attribute.name);
             }
