@@ -7,20 +7,21 @@
         <link rel="stylesheet" href="styles.css" />
         <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
         />
-        <!--<script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
-      data-cf-beacon='{"token": "7d5ba7bbf442d9b1a3ae95da88e0cf"}'
-    ></script>-->
+        <link rel="canonical" href="https://www.laskowicz.de/" />
+        <link rel="alternate" hreflang="en" href="https://www.laskowicz.de/" />
+        <link rel="alternate" hreflang="de" href="https://www.laskowicz.de/de/" />
+        <link rel="alternate" hreflang="x-default" href="https://www.laskowicz.de/" />
         <meta
             name="description"
-            content="Philip Laskowicz's personal webpage. Computer Science Student, Project Engineer IoT/IT, and Software Developer."
+            content="Philip Laskowicz — Computer Science Master's student focused on Energy Informatics and IoT/IT Project Engineer working on secure IoT, AI/ML, LoRaWAN, and utility infrastructure."
         />
         <meta
             name="keywords"
-            content="Philip Laskowicz, Liphip, Computer Science, IoT, IT, Software Developer, Projects, Education, Experiences, Papers"
+            content="Philip Laskowicz, Liphip, Computer Science, IoT, IT, Energy Informatics, Projects, Education, Experiences, Papers, LoRaWAN, Smart City"
         />
         <meta name="author" content="Philip Laskowicz" />
         <meta
@@ -29,109 +30,108 @@
         />
         <meta
             property="og:description"
-            content="Computer Science Student, Project Engineer IoT/IT, and Software Developer."
+            content="Computer Science Master's student and IoT/IT Project Engineer focused on secure IoT, AI/ML, LoRaWAN, and utility infrastructure."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.laskowicz.de" />
+        <meta property="og:url" content="https://www.laskowicz.de/" />
         <meta
             property="og:image"
             content="https://www.laskowicz.de/thumbnail.png"
         />
     </head>
     <body>
+        <a href="#main-content" class="skip-link">Skip to content</a>
         <header>
             <h1>Philip Laskowicz</h1>
             <p>
-                Computer Science Student | Project Engineer IoT/IT Technologies (Working Student) | Software
-                Developer
+                Master's Student in Computer Science | IoT/IT Project Engineer | Secure IoT & Energy Informatics
             </p>
         </header>
 
         <nav>
             <div class="nav dropdown">
-                <button class="nav dropdown-toggle">Menu</button>
-                <ul class="dropdown-content">
+                <button
+                    type="button"
+                    class="nav dropdown-toggle"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    aria-controls="nav-menu"
+                >Menu</button>
+                <ul class="dropdown-content" id="nav-menu">
                     <li>
-                        <a href="#home"><i class="fas fa-home"></i> Home</a>
+                        <a href="#home"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
                     </li>
                     <li>
-                        <a href="#education"
-                            ><i class="fas fa-graduation-cap"></i> Education</a
-                        >
+                        <a href="#education"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</a>
                     </li>
                     <li>
-                        <a href="#experiences"
-                            ><i class="fas fa-briefcase"></i> Experiences</a
-                        >
+                        <a href="#experiences"><i class="fas fa-briefcase" aria-hidden="true"></i> Experiences</a>
                     </li>
                     <li>
-                        <a href="#certifications"
-                            ><i class="fas fa-certificate"></i> Certifications</a
-                        >
+                        <a href="#certifications"><i class="fas fa-certificate" aria-hidden="true"></i> Certifications</a>
                     </li>
                     <li>
-                        <a href="#papers"
-                            ><i class="fas fa-file-alt"></i> Co-authored
-                            Papers</a
-                        >
+                        <a href="#papers"><i class="fas fa-file-alt" aria-hidden="true"></i> Co-authored Papers</a>
                     </li>
                     <li>
-                        <a href="#projects"
-                            ><i class="fas fa-project-diagram"></i> Own Projects
-                            and contributions</a
-                        >
+                        <a href="#projects"><i class="fas fa-project-diagram" aria-hidden="true"></i> Own Projects and Contributions</a>
                     </li>
                     <li>
-                        <a href="#contact"
-                            ><i class="fas fa-envelope"></i> Contact me</a
-                        >
+                        <a href="#interesting"><i class="fas fa-lightbulb" aria-hidden="true"></i> Interesting</a>
                     </li>
                     <li>
-                        <a href="#impressum"
-                            ><i class="fas fa-info-circle"></i> Impressum</a
-                        >
+                        <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact me</a>
+                    </li>
+                    <li>
+                        <a href="#impressum"><i class="fas fa-info-circle" aria-hidden="true"></i> Impressum</a>
                     </li>
                 </ul>
             </div>
 
             <div>
                 <div class="theme dropdown">
-                    <button class="theme dropdown-toggle">Theme</button>
-                    <ul class="dropdown-content">
+                    <button
+                        type="button"
+                        class="theme dropdown-toggle"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="theme-menu"
+                    >Theme</button>
+                    <ul class="dropdown-content" id="theme-menu">
                         <li>
-                            <a
+                            <button
+                                type="button"
                                 id="lightThemeBtn"
                                 class="theme-toggle"
-                                onclick="applyTheme('light')"
-                                ><i class="fas fa-sun"></i> Light</a
-                            >
+                                data-theme="light"
+                            ><i class="fas fa-sun" aria-hidden="true"></i> Light</button>
                         </li>
                         <li>
-                            <a
+                            <button
+                                type="button"
                                 id="darkThemeBtn"
                                 class="theme-toggle"
-                                onclick="applyTheme('dark')"
-                                ><i class="fas fa-moon"></i> Dark</a
-                            >
+                                data-theme="dark"
+                            ><i class="fas fa-moon" aria-hidden="true"></i> Dark</button>
                         </li>
                         <li>
-                            <a
+                            <button
+                                type="button"
                                 id="systemThemeBtn"
                                 class="theme-toggle"
-                                onclick="applyTheme('system')"
-                                ><i class="fas fa-adjust"></i> System Default</a
-                            >
+                                data-theme="system"
+                            ><i class="fas fa-adjust" aria-hidden="true"></i> System Default</button>
                         </li>
                     </ul>
                 </div>
-                <button class="lang" onclick="changeLanguage('de')">
-                    <i class="fas fa-globe"></i>
+                <button type="button" class="lang" data-lang="de">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
                     DE
                 </button>
             </div>
         </nav>
 
-        <main>
+        <main id="main-content">
             <!-- Content will be loaded here dynamically -->
             <code>
                 If you see this text, the content could not be loaded. Please
@@ -141,15 +141,11 @@
 
         <footer>
             <p>
-                &copy; 2025 Philip Laskowicz. All rights reserved.
+                &copy; 2026 Philip Laskowicz. All rights reserved.
                 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#contact"
-                    ><i class="fas fa-envelope"></i> Contact me</a
-                >
+                <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact me</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#impressum"
-                    ><i class="fas fa-info-circle"></i> Impressum</a
-                >
+                <a href="#impressum"><i class="fas fa-info-circle" aria-hidden="true"></i> Impressum</a>
             </p>
         </footer>
 
