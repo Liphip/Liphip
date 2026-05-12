@@ -61,7 +61,7 @@ header {
 
 main {
   padding: 2rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 4rem;
   margin: 2rem auto;
   max-width: 1200px;
   background-color: var(--ternary-color);
@@ -319,7 +319,7 @@ button.lang {
   }
 
   main {
-    padding: 1rem;
+    padding: 1rem 1rem 5rem;
   }
 
   footer {
