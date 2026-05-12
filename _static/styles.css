@@ -247,7 +247,8 @@ button.lang {
   padding: 0 0.5rem;
 }
 
-.dropdown-content li a {
+.dropdown-content li a,
+.dropdown-content li button {
   color: var(--accent-color);
   text-decoration: none;
   display: block;
@@ -255,9 +256,15 @@ button.lang {
   transition: color 0.3s;
   cursor: pointer;
   padding: 6px;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  font: inherit;
 }
 
-.dropdown-content li a:hover {
+.dropdown-content li a:hover,
+.dropdown-content li button:hover {
   background-color: var(--primary-color);
 }
 
@@ -290,7 +297,8 @@ button.lang {
     margin: 0 0.5rem;
   }
 
-  .nav .dropdown-content li a {
+  .nav .dropdown-content li a,
+  .nav .dropdown-content li button {
     color: var(--accent-color);
     text-decoration: none;
     display: block;
@@ -300,7 +308,8 @@ button.lang {
     padding: 0;
   }
 
-  .nav .dropdown-content li a:hover {
+  .nav .dropdown-content li a:hover,
+  .nav .dropdown-content li button:hover {
     background-color: transparent;
     color: var(--primary-color);
   }
@@ -347,7 +356,8 @@ button.lang {
     right: 0;
   }
 
-  .dropdown-content li a {
+  .dropdown-content li a,
+  .dropdown-content li button {
     font-size: 0.875rem;
   }
 

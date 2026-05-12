@@ -42,7 +42,29 @@ function openDropdown(toggle, dropdown) {
 // Restore saved theme (default to system)
 applyTheme(localStorage.getItem("theme") || "system");
 
-// Load content fragment safely using DOMParser to prevent XSS
+function sanitizeFragmentDocument(doc) {
+    doc.querySelectorAll("script, iframe, object, embed").forEach((element) => {
+        element.remove();
+    });
+
+    doc.querySelectorAll("*").forEach((element) => {
+        Array.from(element.attributes).forEach((attribute) => {
+            const name = attribute.name.toLowerCase();
+            const value = attribute.value.trim();
+            if (name.startsWith("on")) {
+                element.removeAttribute(attribute.name);
+            }
+            if (
+                (name === "href" || name === "src" || name === "xlink:href") &&
+                /^javascript:/i.test(value)
+            ) {
+                element.removeAttribute(attribute.name);
+            }
+        });
+    });
+}
+
+// Load content fragment from allowed local files and sanitize scriptable content
 function loadContent(url) {
     fetch(url)
         .then((response) => {
@@ -52,6 +74,7 @@ function loadContent(url) {
         .then((html) => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, "text/html");
+            sanitizeFragmentDocument(doc);
             const main = document.querySelector("main");
             main.innerHTML = "";
             for (const child of doc.body.children) {
@@ -148,6 +171,21 @@ function bindShareControls() {
         btn.addEventListener("click", function () {
             const text = this.dataset.copyText;
             const status = this.closest(".share-item")?.querySelector(".copy-status");
+            const isGermanPage = document.documentElement.lang.startsWith("de");
+            const defaultMessages = isGermanPage
+                ? {
+                    success: "Kopiert",
+                    failure: "Kopieren fehlgeschlagen",
+                    manual: "Bitte manuell kopieren"
+                }
+                : {
+                    success: "Copied",
+                    failure: "Copy failed",
+                    manual: "Copy this manually"
+                };
+            const successMessage = this.dataset.copySuccess || defaultMessages.success;
+            const failureMessage = this.dataset.copyFailure || defaultMessages.failure;
+            const manualMessage = this.dataset.copyManual || defaultMessages.manual;
 
             function setStatus(message) {
                 if (status) status.textContent = message;
@@ -155,10 +193,10 @@ function bindShareControls() {
 
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(text)
-                    .then(() => setStatus("Copied"))
-                    .catch(() => setStatus("Copy failed"));
+                    .then(() => setStatus(successMessage))
+                    .catch(() => setStatus(failureMessage));
             } else {
-                setStatus("Copy this manually");
+                setStatus(manualMessage);
             }
         });
     });
