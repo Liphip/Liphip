@@ -43,13 +43,14 @@ function openDropdown(toggle, dropdown) {
 applyTheme(localStorage.getItem("theme") || "system");
 
 function sanitizeFragmentDocument(doc) {
-    doc.querySelectorAll("*").forEach((element) => {
+    doc.body.querySelectorAll("*").forEach((element) => {
         if (["SCRIPT", "IFRAME", "OBJECT", "EMBED"].includes(element.tagName)) {
             element.remove();
             return;
         }
 
-        Array.from(element.attributes).forEach((attribute) => {
+        for (let index = element.attributes.length - 1; index >= 0; index--) {
+            const attribute = element.attributes[index];
             const name = attribute.name.toLowerCase();
             const value = attribute.value.trim();
             if (name.startsWith("on")) {
@@ -61,7 +62,7 @@ function sanitizeFragmentDocument(doc) {
             ) {
                 element.removeAttribute(attribute.name);
             }
-        });
+        }
     });
 }
 
