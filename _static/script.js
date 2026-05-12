@@ -43,11 +43,12 @@ function openDropdown(toggle, dropdown) {
 applyTheme(localStorage.getItem("theme") || "system");
 
 function sanitizeFragmentDocument(doc) {
-    doc.querySelectorAll("script, iframe, object, embed").forEach((element) => {
-        element.remove();
-    });
-
     doc.querySelectorAll("*").forEach((element) => {
+        if (["SCRIPT", "IFRAME", "OBJECT", "EMBED"].includes(element.tagName)) {
+            element.remove();
+            return;
+        }
+
         Array.from(element.attributes).forEach((attribute) => {
             const name = attribute.name.toLowerCase();
             const value = attribute.value.trim();
@@ -167,22 +168,23 @@ function changeLanguage(language) {
 }
 
 function bindShareControls() {
+    const isGermanPage = document.documentElement.lang.startsWith("de");
+    const defaultMessages = isGermanPage
+        ? {
+            success: "Kopiert",
+            failure: "Kopieren fehlgeschlagen",
+            manual: "Bitte manuell kopieren"
+        }
+        : {
+            success: "Copied",
+            failure: "Copy failed",
+            manual: "Copy this manually"
+        };
+
     document.querySelectorAll("[data-copy-text]").forEach(function (btn) {
         btn.addEventListener("click", function () {
             const text = this.dataset.copyText;
             const status = this.closest(".share-item")?.querySelector(".copy-status");
-            const isGermanPage = document.documentElement.lang.startsWith("de");
-            const defaultMessages = isGermanPage
-                ? {
-                    success: "Kopiert",
-                    failure: "Kopieren fehlgeschlagen",
-                    manual: "Bitte manuell kopieren"
-                }
-                : {
-                    success: "Copied",
-                    failure: "Copy failed",
-                    manual: "Copy this manually"
-                };
             const successMessage = this.dataset.copySuccess || defaultMessages.success;
             const failureMessage = this.dataset.copyFailure || defaultMessages.failure;
             const manualMessage = this.dataset.copyManual || defaultMessages.manual;
